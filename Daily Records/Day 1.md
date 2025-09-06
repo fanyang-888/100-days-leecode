@@ -57,5 +57,22 @@
    
       
 
-- **题目 2**：[移除元素](https://leetcode.cn/problems/remove-element/)
+- **题目 2**：[27. 移除元素](https://leetcode.com/problems/remove-element/)
+  - **知识点**：移除元素，数组
+  - **解题思路**：
+    1.  只要val还在lis中，就进行删除操作
+    2.  for循环遍历数组，查找num == val
+    3.  如果满足，就删除该num
+  - **代码**：
+    ```python
+    class Solution:
+        def removeElement(self, nums: List[int], val: int) -> int:
+            while val in nums:
+                for num in nums:
+                    if num == val:
+                        nums.remove(num)
+            return len(nums)
+    ```
 
+
+    
