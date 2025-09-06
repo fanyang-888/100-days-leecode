@@ -24,7 +24,7 @@
                     mid = (start + end) // 2
             return -1
 
-    # 更优做法：减少memory
+    # 更优做法：在while内部开始时为mid赋值，减少memory，不用每次更新变量都重新为mid赋值
     class Solution:
         def search(self, nums: List[int], target: int) -> int:
             start, end = 0, len(nums)-1
