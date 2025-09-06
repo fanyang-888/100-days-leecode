@@ -72,6 +72,13 @@
                     if num == val:
                         nums.remove(num)
             return len(nums)
+
+    # 更优做法：直接remove val，不用乱七八糟的for了
+    class Solution:
+        def removeElement(self, nums: List[int], val: int) -> int:
+            while val in nums:
+                nums.remove(val)
+            return len(nums)
     ```
 
 
