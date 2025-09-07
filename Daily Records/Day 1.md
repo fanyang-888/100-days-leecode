@@ -82,4 +82,63 @@
     ```
 
 
-    
+- **题目 3**：[977. 排序数组中的平方](https://leetcode.com/problems/squares-of-a-sorted-array/)
+  - **知识点**：数组平方
+  - **解题思路**：
+    1.  将数组中的每个元素平方后，返回按非递减顺序排列的数组
+    2.  原数组可能包含负数，平方后顺序会改变，不能先排序后平方
+  - **代码**：
+  ```python
+  class Solution:
+      def sortedSquares(self, nums: List[int]) -> List[int]:
+          for i in range(len(nums)):
+              nums[i] = nums[i]**2
+          return sorted(nums)
+
+  # 更优（简洁代码）
+  class Solution:
+      def sortedSquares(self, nums: List[int]) -> List[int]:
+          return sorted([num**2 for num in nums])
+  ```
+
+- **题目 4**：[209. 最小子数组之和](https://leetcode.com/problems/minimum-size-subarray-sum/description/)
+  - **知识点**：滑动窗口（sliding window）
+  - **解题思路**：
+    1.  扩展阶段：right 向右移动，增加窗口和
+    2.  收缩阶段：当和 ≥ target 时，尝试缩小窗口
+    3.  更新答案：每次满足条件时更新最小长度
+  - **代码**：
+  ```python
+  class Solution:
+      def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+          if target <= max(nums):
+              return 1
+          if target > sum(nums):
+              return 0
+          min_len = float('inf')
+          left = 0
+          sub_sum = 0
+          for right in range(len(nums)):
+              sub_sum += nums[right]
+              while sub_sum >= target:
+                  min_len = min(min_len, right - left + 1)
+                  sub_sum -= nums[left]
+                  left += 1
+          return min_len
+
+  # 另一版本：不先判断特殊情况
+  class Solution:
+      def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+          left = 0
+          min_len = float('inf')
+          window_sum = 0
+          for right in range(len(nums)):
+              window_sum += nums[right] # 1. 扩展窗口
+              while window_sum >= target: # 2. 收缩窗口（寻找最小长度）
+                  min_len = min(min_len, right - left + 1)
+                  window_sum -= nums[left]
+                  left += 1
+          return min_len if min_len != float('inf') else 0
+  ```
+
+
