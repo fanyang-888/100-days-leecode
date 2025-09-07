@@ -1,4 +1,4 @@
-# 100-days-leecode
+# Leecode刷题
 此仓库用于记录我的 LeetCode 刷题历程。
 刷题顺序参考[《代码随想录》](https://github.com/youngyangyang04/leetcode-master?tab=readme-ov-file)
 
