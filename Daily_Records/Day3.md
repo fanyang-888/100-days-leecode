@@ -26,7 +26,7 @@
           return dummy_head.next
   ```
 
-  - **题目 2**：[707. 设计链表](https://leetcode.com/problems/design-linked-list/description/)
+- **题目 2**：[707. 设计链表](https://leetcode.com/problems/design-linked-list/description/)
   - **知识点**：链表，设计
   - **解题思路**：
     1.  分离链表类和节点类：链表类管理整个链表，节点类存储数据
@@ -84,5 +84,4 @@
               current = current.next
           current.next = current.next.next
           self.size -= 1
-
   ```
