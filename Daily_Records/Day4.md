@@ -29,14 +29,14 @@
           return newnode
   ```
 
-  - **题目 2**：[24. 交换相邻节点](https://leetcode.com/problems/swap-nodes-in-pairs/description/)
-  - **知识点**：链表，递归
-  - **解题思路**：
-    1.  如果链表为空或只有一个节点，直接返回
-    2.  保存第二个节点（新的头节点）
-    3.  递归剩余部分
-    4.  交换当前两个节点
-  - **代码**：
+- **题目 2**：[24. 交换相邻节点](https://leetcode.com/problems/swap-nodes-in-pairs/description/)
+- **知识点**：链表，递归
+- **解题思路**：
+  1.  如果链表为空或只有一个节点，直接返回
+  2.  保存第二个节点（新的头节点）
+  3.  递归剩余部分
+  4.  交换当前两个节点
+- **代码**：
   ```python
   # Definition for singly-linked list.
   # class ListNode:
@@ -53,13 +53,13 @@
           return new_head
   ```
 
-  - **题目 3**：[19. 从列表末尾删除第 N 个节点](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/)
-  - **知识点**：链表，双指针
-  - **解题思路**：
-    1.  创建虚拟头节点，空双指针
-    2.  fast比slow先走n+1步，再同步移动
-    3.  跳过要删除的节点
-  - **代码**：
+- **题目 3**：[19. 从列表末尾删除第 N 个节点](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/)
+- **知识点**：链表，双指针
+- **解题思路**：
+  1.  创建虚拟头节点，空双指针
+  2.  fast比slow先走n+1步，再同步移动
+  3.  跳过要删除的节点
+- **代码**：
   ```python
   # Definition for singly-linked list.
   # class ListNode:
@@ -83,14 +83,14 @@
           return dummy_head.next
   ```
 
-  - **题目 4**：[160. 两个链表的交点](https://leetcode.com/problems/intersection-of-two-linked-lists/description/)
-  - **知识点**：哈希表，链表，双指针
-  - **解题思路**：
-    1.  两个指针分别从两个链表头开始
-    2.  切换链表：当指针到达末尾时，切换到另一个链表
-    3.  相遇即相交：如果两链表相交，指针必定会相遇
-    4.  如果两链表不相交，指针也会同时指向None
-  - **代码**：
+- **题目 4**：[160. 两个链表的交点](https://leetcode.com/problems/intersection-of-two-linked-lists/description/)
+- **知识点**：哈希表，链表，双指针
+- **解题思路**：
+  1.  两个指针分别从两个链表头开始
+  2.  切换链表：当指针到达末尾时，切换到另一个链表
+  3.  相遇即相交：如果两链表相交，指针必定会相遇
+  4.  如果两链表不相交，指针也会同时指向None
+- **代码**：
   ```python
   # Definition for singly-linked list.
   # class ListNode:
@@ -111,15 +111,15 @@
           return pA
   ```
 
-  - **题目 n**：[142. 链表循环](https://leetcode.com/problems/linked-list-cycle-ii/description/)
-  - **知识点**：哈希表，链表，双指针
-  - **解题思路**：
+- **题目 5**：[142. 链表循环](https://leetcode.com/problems/linked-list-cycle-ii/description/)
+- **知识点**：哈希表，链表，双指针
+- **解题思路**：
     1.  检测是否有环
     2.  慢指针每次移动1步，快指针每次移动2步，如果有环，快慢指针必定会相遇
     3.  第二步：找到环的起始位置
     4.  当快慢指针相遇后：将其中一个指针重置到链表头，两个指针都改为每次移动1步
     5.  相遇位置距离链表入口距离 = 起始位置到入口距离，再次相遇的位置就是环的起始位置
-  - **代码**：
+- **代码**：
   ```python
   # Definition for singly-linked list.
   # class ListNode:
