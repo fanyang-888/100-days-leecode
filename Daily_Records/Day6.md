@@ -23,15 +23,27 @@
           return count
   ```
 
-- **题目 2**：[383. 赎金信]()
-  - **知识点**：
+- **题目 2**：[383. 赎金信](https://leetcode.com/problems/ransom-note/)
+  - **知识点**：哈希表，字符串，计数
   - **解题思路**：
-    1.
+    1.  建立空哈希表，储存各字母在magazine出现的次数
+    2.  减去在ransomnote中字母出现的次数
+    3.  如果为负，则false
   - **代码**：
   ```python
+  class Solution:
+      def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+          record = [0] * 26
+          for char in magazine:
+              record[ord(char) - ord("a")] += 1
+          for char in ransomNote:
+              record[ord(char) - ord("a")] -= 1
+              if record[ord(char) - ord("a")] < 0:
+                  return False
+          return True
   ```
 
-- **题目 3**：[]()
+- **题目 3**：[15. 三数之和](https://leetcode.com/problems/3sum/description/)
   - **知识点**：
   - **解题思路**：
     1.
